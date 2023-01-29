@@ -28,7 +28,7 @@ if($status==false) {
 
     // 更新ボタン
     $view .= '<td>';
-    $view .= '<a href="update.php?id='.$result['id'].'">';
+    $view .= '<a href="detail.php?id='.$result['id'].'">';
     $view .= '<button>🔄</button>';
     $view .= '</a>';
     $view .= '</td>';

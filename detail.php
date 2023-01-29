@@ -1,5 +1,5 @@
 <?php
-//selsect.phpから処理を持ってくる
+//select.phpから処理を持ってくる
 //1.外部ファイル読み込みしてDB接続(funcs.phpを呼び出して)
 require_once('funcs.php');
 $pdo = db_conn();
