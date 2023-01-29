@@ -8,6 +8,7 @@ $url = $_POST['url'];
 $handle = $_POST['handle'];
 $comment = $_POST['comment'];
 $rate = $_POST['rate'];
+$id = $_POST['id'];
 
 // 2. DB接続します
 require_once('funcs.php');

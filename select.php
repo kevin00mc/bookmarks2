@@ -29,14 +29,14 @@ if($status==false) {
     // 更新ボタン
     $view .= '<td>';
     $view .= '<a href="detail.php?id='.$result['id'].'">';
-    $view .= '<button>🔄</button>';
+    $view .= '<button> 🔄 </button>';
     $view .= '</a>';
     $view .= '</td>';
 
     // 削除ボタン
     $view .= '<td>';
     $view .= '<a href="delete.php?id='.$result['id'].'">';
-    $view .= '<button>🗑</button>';
+    $view .= '<button> 🗑 </button>';
     $view .= '</a>';
     $view .= '</td>';
     $view .= "</tr>";
