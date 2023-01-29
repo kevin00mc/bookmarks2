@@ -21,10 +21,23 @@ if($status==false) {
   //FETCH_ASSOC=http://php.net/manual/ja/pdostatement.fetch.php
   while( $result = $stmt->fetch(PDO::FETCH_ASSOC)){ 
     $view .= "<tr>";
-    $view .= "<td>".$result["id"]."</td><td>".$result["title"]."</td><td><a href=".$result["url"].">"."☆"."</a></td><td>".$result["comment"]."</td><td>".$result["handle"]."</td><td>".$result["reg_date"]."</td>";
+    $view .= "<td>".$result["id"]."</td><td>".$result["title"]."</td><td><a href=".$result["url"].">"."☆"."</a></td><td>".$result["comment"]."</td><td>".$rate["rate"]."</td><td>".$result["handle"]."</td><td>".$result["reg_date"]."</td>";
     // $view .= "<td>".$result['reg_date'].' / '.$result['title'].' / '.$result['url'].' / '.$result['comment'];
     $view .= "</tr>";
 
+    // 更新ボタン
+    $view .= '<td>';
+    $view .= '<a href="update.php?id='.h($r["id"]).'">';
+    $view .= '<button>🔄</button>';
+    $view .= '</a>';
+    $view .= '</td>';
+
+    // 削除ボタン
+    $view .= '<td>';
+    $view .= '<a href="delete.php?id='.h($r["id"]).'">';
+    $view .= '<button>🗑</button>';
+    $view .= '</a>';
+    $view .= '</td>';
   }
 
 }
@@ -57,7 +70,7 @@ if($status==false) {
 
 <!-- Main[Start] -->
 <div>
-<div class="container jumbotron"><table><th>ID</th><th>タイトル</th><th>URL</th><th>コメント</th><th>ハンドルネーム</th><th>登録日時</th><?=$view?></table></div>
+<div class="container jumbotron"><table><th>ID</th><th>タイトル</th><th>URL</th><th>コメント</th><th>評価</th><th>ハンドルネーム</th><th>登録日時</th><th>更新</th><th>削除</th><?=$view?></table></div>
 </div>
 <!-- Main[End] -->
 
