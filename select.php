@@ -21,20 +21,21 @@ if($status==false) {
   //FETCH_ASSOC=http://php.net/manual/ja/pdostatement.fetch.php
   while( $result = $stmt->fetch(PDO::FETCH_ASSOC)){ 
     $view .= "<tr>";
+    $view .= '<a href="detail.php?id='.$result['id'].'">';
     $view .= "<td>".$result["id"]."</td><td>".$result["title"]."</td><td><a href=".$result["url"].">"."☆"."</a></td><td>".$result["comment"]."</td><td>".$rate["rate"]."</td><td>".$result["handle"]."</td><td>".$result["reg_date"]."</td>";
     // $view .= "<td>".$result['reg_date'].' / '.$result['title'].' / '.$result['url'].' / '.$result['comment'];
     $view .= "</tr>";
 
     // 更新ボタン
     $view .= '<td>';
-    $view .= '<a href="update.php?id='.h($r["id"]).'">';
+    $view .= '<a href="update.php?id='.$result['id'].'">';
     $view .= '<button>🔄</button>';
     $view .= '</a>';
     $view .= '</td>';
 
     // 削除ボタン
     $view .= '<td>';
-    $view .= '<a href="delete.php?id='.h($r["id"]).'">';
+    $view .= '<a href="delete.php?id='.$result['id'].'">';
     $view .= '<button>🗑</button>';
     $view .= '</a>';
     $view .= '</td>';
