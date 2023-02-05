@@ -26,3 +26,20 @@ function db_conn(){
 function redirect ($file_name){
     header('Location: '.$file_name);
 }
+
+//ログインチェック
+function loginCheck(){
+    if(!isset($_SESSION["chk_ssid"]) || $_SESSION["chk_ssid"]!=session_id()){
+      exit("Login Error");
+    }else{
+      session_regenerate_id(true);
+      $_SESSION["chk_ssid"] = session_id();
+    }
+  }
+
+//SQLエラー
+function sql_error($stmt){
+    //execute（SQL実行時にエラーがある場合）
+    $error = $stmt->errorInfo();
+    exit("SQLError:".$error[2]);
+}

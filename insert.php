@@ -31,11 +31,8 @@ $status = $stmt->execute();
 
 // 6．データ登録処理後
 if($status==false){
-  //SQL実行時にエラーがある場合（エラーオブジェクト取得して表示）
-  $error = $stmt->errorInfo();
-  exit("ErrorMassage:".$error[2]);
+  sql_error($stmt);
 }else{
-  //５．index.phpへリダイレクト
-  header('Location: select.php');
+  redirect("index.php");
 }
 ?>

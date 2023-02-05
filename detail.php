@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+require_once('funcs.php');
+
+loginCheck();
+
 //select.phpから処理を持ってくる
 //1.外部ファイル読み込みしてDB接続(funcs.phpを呼び出して)
 require_once('funcs.php');
@@ -61,15 +67,15 @@ if($status == false){
      <label>コメント：<textArea name="comment" rows="4" cols="40"><?= $result['comment'] ?></textArea></label><br>
      <label>評価：
      <div class="evaluation">
-          <input id="star1" type="radio" name="rate" value="★★★★★" />
+          <input id="star1" type="radio" name="rate" value="5" />
           <label for="star1"><span class="text">最高</span></label>
-          <input id="star2" type="radio" name="rate" value="★★★★" />
+          <input id="star2" type="radio" name="rate" value="4" />
           <label for="star2"><span class="text">良い</span></label>
-          <input id="star3" type="radio" name="rate" value="★★★" />
+          <input id="star3" type="radio" name="rate" value="3" />
           <label for="star3"><span class="text">普通</span></label>
-          <input id="star4" type="radio" name="rate" value="★★" />
+          <input id="star4" type="radio" name="rate" value="2" />
           <label for="star4"><span class="text">悪い</span></label>
-          <input id="star5" type="radio" name="rate" value="★" />
+          <input id="star5" type="radio" name="rate" value="1" />
           <label for="star5"><span class="text">最悪</span></label>
         </div>
         </label>

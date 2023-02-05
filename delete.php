@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+require_once('funcs.php');
+
+loginCheck();
+
 //selsect.phpから処理を持ってくる
 //1.対象のIDを取得
 $id = $_GET['id'];

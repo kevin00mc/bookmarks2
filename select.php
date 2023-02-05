@@ -1,6 +1,12 @@
 <?php
+//SESSIONスタート
+session_start();
+
 //1.  DB接続します
 require_once('funcs.php');
+
+//ログインチェック
+loginCheck();
 $pdo = db_conn();
 
 //２．SQL文を用意(データ取得：SELECT)

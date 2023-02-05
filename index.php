@@ -1,3 +1,7 @@
+<?php
+require_once('funcs.php');
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -12,7 +16,9 @@
 <header>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
-    <div class="navbar-header"><a class="navbar-brand" href="select.php">☆☆漫画村☆☆</a></div>
+    <div class="navbar-header"><a class="navbar-brand" href="select.php">データ一覧</a></div>
+    <div class="navbar-header"><a class="navbar-brand" href="login.php">ログイン</a></div>
+    <div class="navbar-header"><a class="navbar-brand" href="logout.php">ログアウト</a></div><!-- ここを追記 -->
     </div>
   </nav>
 </header>
@@ -29,15 +35,15 @@
      <label>コメント：<textArea name="comment" rows="4" cols="40"></textArea></label><br>
      <label>評価：
      <div class="evaluation">
-          <input id="star1" type="radio" name="rate" value="★★★★★" />
+          <input id="star1" type="radio" name="rate" value="5" />
           <label for="star1"><span class="text">最高</span></label>
-          <input id="star2" type="radio" name="rate" value="★★★★" />
+          <input id="star2" type="radio" name="rate" value="4" />
           <label for="star2"><span class="text">良い</span></label>
-          <input id="star3" type="radio" name="rate" value="★★★" />
+          <input id="star3" type="radio" name="rate" value="3" />
           <label for="star3"><span class="text">普通</span></label>
-          <input id="star4" type="radio" name="rate" value="★★" />
+          <input id="star4" type="radio" name="rate" value="2" />
           <label for="star4"><span class="text">悪い</span></label>
-          <input id="star5" type="radio" name="rate" value="★" />
+          <input id="star5" type="radio" name="rate" value="1" />
           <label for="star5"><span class="text">最悪</span></label>
         </div>
       </lable>
